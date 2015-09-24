@@ -1,0 +1,10 @@
+# eclipse setting file
+.settings/
+.project
+.classpath
+
+# ignore library
+lib/
+
+# igonre class file
+bin/
