@@ -9,6 +9,7 @@ var routes = require('./routes/index');
 
 var app = express();
 
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -21,6 +22,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+var MongoClient = require('mongodb').MongoClient;
+
+var url = 'mongodb://localhost:27017/prefa';
+var db;
+MongoClient.connect(url, function(err, _db){
+  console.log("Connect correct");
+  db = _db;
+})
+
+app.use(function (req, res, next) {
+  req.db = db;
+  next();
+});
 app.use('/', routes);
 
 
@@ -57,3 +71,4 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
