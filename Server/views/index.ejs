@@ -7,11 +7,47 @@
 
   </head>
   <body>
+  <script src="bower_components/angular/angular.min.js"></script>
 
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="bower_components/angular/angular.min.js"></script>
+
+  <style>
+    table, th , td {
+      border: 1px solid grey;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+    table tr:nth-child(odd) {
+      background-color: #f1f1f1;
+    }
+    table tr:nth-child(even) {
+      background-color: #ffffff;
+    }
+  </style>
+  <div ng-app="myapp" ng-controller="article">
+    <h2>keyword : {{keyword}} </h2>
+    <h3>likes Article</h3>
+    <table>
+      <tr ng-repeat="x in likes">
+        <td>{{ x.scrname }}</td>
+        <td>{{ x.text }}</td>
+        <td>{{ x.date }}</td>
+      </tr>
+    </table>
+    <h3>likes Article</h3>
+    <table>
+      <tr ng-repeat="x in dislikes">
+        <td>{{ x.scrname }}</td>
+        <td>{{ x.text }}</td>
+        <td>{{ x.date }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script src="javascripts/module.js"></script>
+  <script src="javascripts/controller.js"></script>
+
+
   </body>
 </html>
