@@ -1,2 +1,6 @@
 # IDEA Setting File
 .idea/
+*.log
+
+# bower_components
+Server/public/bower_components
