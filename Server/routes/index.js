@@ -67,7 +67,7 @@ router.get('/result/article', function (req, res, next){
           query.likes = docs;
 
           req.db.collection('article')
-              .find({"_id": { $in: doc.likes_id}}, {"scrname" : 1, "text" : 1, "date" : 1, "url" : 1, "_id" : 0})
+              .find({"_id": { $in: doc.dislikes_id}}, {"scrname" : 1, "text" : 1, "date" : 1, "url" : 1, "_id" : 0})
               .toArray(function (err, docs) {
                 query.dislikes = docs;
                 res.send(query);
