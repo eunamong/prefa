@@ -7,12 +7,12 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+
 //keyword를 받으면 가장 최근 분석 결과 제공
 //Query로 keyword받음
 router.get('/result/recently_result', function (req, res, next) {
-  var keyword = req.query.keyword;
   var query = {};
-
+  var keyword = req.query.keyword;
   req.db.collection('analysis').findOne({$query: {"keyword": keyword}, $orderby: {"reg_date": -1}}, function (err, doc) {
     query.keyword = doc.keyword;
     query.result = doc.result;
