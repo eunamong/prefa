@@ -43,41 +43,44 @@ body {
 }
 
 .ResultContainer {
-  width: 75%;
+  width: 940px;
   margin: 0 auto;
   /*keyword result container*/
 }
 .KeywordInfoBar {
-  width: 100%;
+  width: 940px;
   height:200px;
   background-color: #FFDC74;
   /*keyword info bar*/
 }
 
 .SentimentBarContainer {
-  width: 100%;
-  height: 50px;
-  margin-top: 70px;
-  margin-bottom: 80px;
+  width: 940px;
+  margin-top: 60px;
+  margin-bottom: 70px;
   /*sentiment bar*/
 }
 
-.SentimentBarLikes {
-  width: 15%;
-  height: 50px;
-}
-.SentimentBarDislikes {
-  width: 15%;
-  height: 50px;
-}
-.SentimentProgressBar {
-  margin-top: 20px;
-  width: 70%;
+.SentimentScope{
+  width: 752px;
+  margin: 0 auto;
 }
 
+.SentimentBarLikes {
+  float: left;
+  width: 72px;
+}
+.SentimentBarDislikes {
+  width: 72px;
+}
+.SentimentProgressBar {
+  float: left;
+  width:608px;
+  padding: 15px;
+}
 .ArticleContainer {
   /*article*/
-  width:100%;
+  width:940px;
   height:1000px;
 }
 .LikesArticle {
@@ -94,3 +97,5 @@ body {
   background-color:#9197B5;
   /*dislikes article*/
 }
+
+.progress {background: rgba(245, 245, 245, 1); border: 0px solid rgba(245, 245, 245, 1); border-radius: 18px; height: 40px;}
