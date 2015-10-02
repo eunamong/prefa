@@ -9,12 +9,12 @@
 </head>
 <body ng-app="prefa" ng-controller="changeScreen">
 <!--FFDC74-->
-<div class="is" ng-show="firstScreenSeen">
-    <div class="isc">
-        <div class="pl">
+<div class="InputScreen" ng-show="firstScreenSeen">
+    <div class="InputContainer">
+        <div class="PrefaLogo">
             <img src="images/dtd.png" width="500" height="375">
         </div>
-        <form class="form-inline ib">
+        <form class="form-inline InputBar">
             <input type="text" class="form-control" placeholder="리뷰주제를 입력하세용" style="width:450px">
             <button type="button" class="btn btn-warning" ng-click="toggle()">
                 <span class="glyphicon glyphicon-search"></span>
@@ -23,18 +23,35 @@
     </div>
 </div>
 
-<div class = "rs" ng-hide="firstScreenSeen">
-    <div class = "inb">
+<div class="ResultScreen" ng-hide="firstScreenSeen">
+    <div class="InputNaviBar">
     </div>
-    <div class = "kib">
-    </div>
-    <div class = "krc">
-        <div class = "sb">
+    <div class="ResultContainer">
+        <div class="KeywordInfoBar">
         </div>
-        <div class = "art">
-            <div class = "la">
+
+        <div class="row">
+            <div class="SentimentBarContainer">
+                <div class="SentimentBarLikes col-xs-2">
+                </div>
+
+                <div class="SentimentProgressBar col-xs-8">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+                             aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                            ㅇㅅㅇ%
+                        </div>
+                    </div>
+                </div>
+
+                <div class="SentimentBarDislikes col-xs-2">
+                </div>
             </div>
-            <div class = "dla">
+        </div>
+        <div class="ArticleContainer">
+            <div class="LikesArticle">
+            </div>
+            <div class="DislikesArticle">
             </div>
         </div>
     </div>
