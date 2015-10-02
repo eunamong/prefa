@@ -10,3 +10,10 @@ app.controller('article', function($scope, $http) {
             $scope.dislikes = response.dislikes;
         });
 });
+
+app.controller('changeScreen', function($scope) {
+    $scope.firstScreenSeen = true;
+    $scope.toggle = function() {
+        $scope.firstScreenSeen = false;
+    }
+})
