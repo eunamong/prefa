@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="bower_components/angular/angular.min.js"></script>
+</head>
+<body>
+<!--FFDC74-->
+
+<div class="ResultScreen">
+
+    <nav class="navbar-fixed-top">
+        <div class="InputNaviBar">
+        </div>
+    </nav>
+    <div class="ResultContainer">
+
+        <div class="KeywordInfoBar">
+        </div>
+        <div class="SentimentBarContainer">
+            <div class="SentimentScope">
+                <span class="SentimentBarLikes">
+                    <img src="images/likes.png" style="height: 72px">
+                </span>
+                <span class="SentimentProgressBar">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
+                             style="width:40%;">
+                            Likes
+                        </div>
+                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                             style="width:60%">
+                            Dislikes
+                        </div>
+                    </div>
+                </span>
+                <span class="SentimentBarDislikes">
+                    <img src="images/dislikes.png" style="height: 72px">
+                </span>
+            </div>
+        </div>
+        <div class="ArticleContainer">
+            <div class="LikesArticleContainer">
+                <div class="LikesArticleScope">
+                    <ul class="list-group">
+                        <li class="list-group-item">First item</li>
+                        <li class="list-group-item">Second item</li>
+                        <li class="list-group-item">Third item</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="DislikesArticleContainer">
+                <div class="DislikesArticleScope">
+                    <ul class="list-group">
+                        <li class="list-group-item">First item</li>
+                        <li class="list-group-item">Second item</li>
+                        <li class="list-group-item">Third item</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="javascripts/module.js"></script>
+<script src="javascripts/controller.js"></script>
+</body>
+</html>

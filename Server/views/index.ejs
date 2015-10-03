@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="stylesheets/style.css">
     <script src="bower_components/angular/angular.min.js"></script>
 </head>
-<body ng-app="prefa" ng-controller="changeScreen">
+<body style="background-color: #FFDC74">
 <!--FFDC74-->
-<div class="InputScreen" ng-show="firstScreenSeen">
+<div class="InputScreen">
     <div class="InputContainer">
         <div class="PrefaLogo">
             <img src="images/dtd.png" width="500" height="375">
@@ -22,43 +22,6 @@
         </form>
     </div>
 </div>
-
-<div class="ResultScreen" ng-hide="firstScreenSeen">
-    <div class="InputNaviBar">
-    </div>
-    <div class="ResultContainer">
-
-        <div class="KeywordInfoBar">
-        </div>
-        <div class="SentimentBarContainer">
-            <div class="SentimentScope">
-                <span class="SentimentBarLikes">
-                    <img src="images/likes.png" style="height: 72px">
-                </span>
-                <span class="SentimentProgressBar">
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" style="width:40%">
-                            Likes
-                        </div>
-                        <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" style="width:60%">
-                            Dislikes
-                        </div>
-                    </div>
-                </span>
-                <span class="SentimentBarDislikes">
-                    <img src="images/dislikes.png" style="height: 72px">
-                </span>
-            </div>
-        </div>
-        <div class="ArticleContainer">
-            <div class="LikesArticle">
-            </div>
-            <div class="DislikesArticle">
-            </div>
-        </div>
-    </div>
-</div>
-
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="javascripts/module.js"></script>
 <script src="javascripts/controller.js"></script>
