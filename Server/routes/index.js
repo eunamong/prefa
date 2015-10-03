@@ -4,7 +4,14 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+  var query = req.query.keyword;
+  if(query === undefined) {
+    res.render('index');
+  }
+  else {
+    res.render('resultscreen');
+  }
+
 });
 
 
