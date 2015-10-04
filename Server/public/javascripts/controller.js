@@ -2,18 +2,27 @@
  * Created by Euna Kang on 2015-09-30.
  */
 
-app.controller('article', function($scope, $http) {
-    $http.get("http://localhost:3000/result/article?keyword=eunamong")
-        .success(function(response) {
-            $scope.keyword = response.keyword;
-            $scope.likes = response.likes;
-            $scope.dislikes = response.dislikes;
-        });
+app.controller('changeScreen', function ($scope) {
+    $scope.ChangeScreen = function () {
+        location.href = "http://localhost:3000?keyword=" + $scope.keyword;
+    }
 });
 
-app.controller('changeScreen', function($scope) {
-    $scope.firstScreenSeen = true;
-    $scope.toggle = function() {
-        $scope.firstScreenSeen = false;
-    }
+app.controller('', function ($scope) {
+    $scope.keyword;
+    $scope.result;
+    $scope.date;
+    $scope.likes;
+    $scope.dislikes;
+    $http.get("http://localhost:3000/result/recently_result?keyword" + $scope.keyword)
+        .success(function (rr_res) {
+            $scope.result = rr_res.result;
+            $scope.date = rr_res.date;
+        });
+
+    $http.get("http://localhost:3000/result/article?keyword=" + $scope.keyword)
+        .success(function (at_res) {
+            $scope.likes = at_res.likes;
+            $scope.dislikes = at_res.dislikes;
+        });
 })

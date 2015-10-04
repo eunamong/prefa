@@ -9,7 +9,7 @@ router.get('/', function (req, res, next) {
     res.render('index');
   }
   else {
-    res.render('resultscreen');
+    res.render('resultscreen', {query_keyword : query});
   }
 
 });

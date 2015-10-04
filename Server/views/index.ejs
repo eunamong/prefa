@@ -13,9 +13,9 @@
         <div class="PrefaLogo">
             <img src="images/dtd.png" width="500" height="375">
         </div>
-        <form class="form-inline InputBar">
-            <input type="text" class="form-control" placeholder="리뷰주제를 입력하세용" style="width:450px">
-            <button type="button" class="btn btn-warning" ng-click="toggle()">
+        <form class="form-inline InputBar" ng-app="prefa" ng-controller="changeScreen">
+            <input type="text" class="form-control" ng-model="keyword" style="width:450px">
+            <button type="button" class="btn btn-warning" ng-click="ChangeScreen()">
                 <span class="glyphicon glyphicon-search"></span>
             </button>
         </form>
