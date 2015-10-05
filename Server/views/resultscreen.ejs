@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="stylesheets/style.css">
     <script src="bower_components/angular/angular.min.js"></script>
+
 </head>
 <body>
 <!--FFDC74-->
 
-<div class="ResultScreen">
+<div class="ResultScreen" ng-app="prefa" ng-controller="infoSender">
 
     <nav class="navbar-fixed-top">
         <div class="InputNaviBar">
@@ -18,20 +20,22 @@
     <div class="ResultContainer">
 
         <div class="KeywordInfoBar">
+
         </div>
         <div class="SentimentBarContainer">
             <div class="SentimentScope">
                 <span class="SentimentBarLikes">
                     <img src="images/likes.png" style="height: 72px">
                 </span>
+
                 <span class="SentimentProgressBar">
                     <div class="progress">
                         <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
-                             style="width:40%;">
+                             style="width:{{result * 100}}%;">
                             Likes
                         </div>
                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-                             style="width:60%">
+                             style="display: block; float: right; width:{{100 - result * 100}}%";">
                             Dislikes
                         </div>
                     </div>
@@ -45,18 +49,18 @@
             <div class="LikesArticleContainer">
                 <div class="LikesArticleScope">
                     <ul class="list-group">
-                        <li class="list-group-item">First item</li>
-                        <li class="list-group-item">Second item</li>
-                        <li class="list-group-item">Third item</li>
+                        <li class="list-group-item" ng-repeat="x in likes">
+                            {{"@"+x.scrname + " : " + x.text}}
+                        </li>
                     </ul>
                 </div>
             </div>
             <div class="DislikesArticleContainer">
                 <div class="DislikesArticleScope">
                     <ul class="list-group">
-                        <li class="list-group-item">First item</li>
-                        <li class="list-group-item">Second item</li>
-                        <li class="list-group-item">Third item</li>
+                        <li class="list-group-item" ng-repeat="x in dislikes">
+                            {{"@"+x.scrname + " : " + x.text}}
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -64,6 +68,7 @@
     </div>
 </div>
 
+<script>query_keyword = "<%= key%>"</script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="javascripts/module.js"></script>
 <script src="javascripts/controller.js"></script>

@@ -9,9 +9,8 @@ router.get('/', function (req, res, next) {
     res.render('index');
   }
   else {
-    res.render('resultscreen', {query_keyword : query});
+    res.render('resultscreen', { key: query });
   }
-
 });
 
 
@@ -26,36 +25,6 @@ router.get('/result/recently_result', function (req, res, next) {
     query.date = doc.reg_date;
     res.send(query);
   });
- /* insert analysis sample
-
-  var arr = [];
-  var arr2 = [];
-  req.db.collection('article').find({}, {_id:true}).limit(10).toArray(function (err, docs) {
-    docs.forEach(function (doc) {
-      arr.push(doc._id);
-    })
-    console.log(arr);
-
-    req.db.collection('article').find({}, {_id:true}).skip(10).limit(10).toArray(function (err, docs) {
-      docs.forEach(function (doc) {
-        arr2.push(doc._id);
-      })
-      console.log(arr2);
-
-      req.db.collection('analysis').insertOne( {
-        "reg_date" : new Date() ,
-        "keyword" : "eunamong",
-        "result" : 60,
-        likes_id : arr,
-        dislikes_id : arr2
-      }, function(err, result) {
-        console.log("insert")
-        res.sendStatus(200);
-      });
-    });
-  });
-*/
-
 });
 
 
@@ -86,7 +55,7 @@ router.get('/result/article', function (req, res, next){
 //keyword를 받아 분석 시작
 //Query로 keyword받음
 router.post('/result/analysis', function(req, res, next){
-  req.db.collection('article').find().skip(100).limit(10).toArray(function (err, docs) {
+  req.db.collection('article').find().skip(300).limit(10).toArray(function (err, docs) {
     var likes = [];
     var dislikes = [];
 
@@ -103,7 +72,7 @@ router.post('/result/analysis', function(req, res, next){
     req.db.collection('analysis').insertOne( {
       "reg_date" : new Date() ,
       "keyword" : req.query.keyword,
-      "result" : result,
+      "result" : parseFloat(result),
       likes_id : likes,
       dislikes_id : dislikes
     }, function(err, result) {
