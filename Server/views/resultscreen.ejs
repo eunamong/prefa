@@ -31,12 +31,12 @@
                 <span class="SentimentProgressBar">
                     <div class="progress">
                         <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
-                             style="width:{{result * 100}}%;">
-                            Likes
+                             ng-style="getLikeStyle(result)">
+                            Likes {{result * 100}}
                         </div>
                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-                             style="display: block; float: right; width:{{100 - result * 100}}%";">
-                            Dislikes
+                             style="display: block; float: right;" ng-style="getDislikeStyle(result)">
+                            Dislikes {{100 - result * 100}}
                         </div>
                     </div>
                 </span>
